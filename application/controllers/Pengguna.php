@@ -39,12 +39,20 @@ class Pengguna extends CI_Controller
         }
     }
     // Menampilkan data user
+    // Menampilkan data user dan biodata
     public function tampil_data()
     {
         if ($this->session->userdata('status') != "login") {
             redirect('pengguna');
         }
+
+        // Ambil data users
         $data['hasil'] = $this->M_Pengguna->ambil_semua();
+
+        // Ambil data biodata (pastikan fungsi ini ada di M_Pengguna)
+        $data['biodata_hasil'] = $this->M_Pengguna->ambil_biodata();
+
         $this->load->view('v_data_user', $data);
     }
+
 }

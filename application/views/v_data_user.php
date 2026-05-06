@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Dashboard - nelajar_ci_3</title>
+    <title>Dashboard - belajar_ci_3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { padding-top: 70px; } /* Memberi ruang agar konten tidak tertutup navbar sticky */
@@ -61,6 +61,31 @@
                         </table>
                     </div>
                 </div>
+                <div class="d-flex justify-content-between align-items-center mb-4 mt-5">
+    <h3>Data `biodata`</h3>
+</div>
+
+<div class="card">
+    <div class="card-body p-0">
+        <table class="table table-striped mb-0">
+            <thead class="table-success">
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($biodata_hasil as $bio): ?>
+                    <tr>
+                        <td><?= $bio->id ?></td>
+                        <td><?= $bio->nama ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
             </div>
         </div>
     </div>
